@@ -6,6 +6,7 @@ a = [
 target = 2020
 
 # PART 1
+# find the two entries that sum to 2020 and then multiply those two numbers together.
 for i in a:
     for y in a:
         if (i+y==target):
@@ -13,6 +14,7 @@ for i in a:
 
 
 # PART 2
+# find three numbers in your expense report that meet the same criteria.
 for i in a:
     for y in a:
         for z in a:

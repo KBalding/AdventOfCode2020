@@ -11,7 +11,6 @@ keys = {"byr",
 
 
 
-items={}
 
 with open("Day4\\test2.txt", "r") as data:
     passports = [i.replace('\n', ' ').split()

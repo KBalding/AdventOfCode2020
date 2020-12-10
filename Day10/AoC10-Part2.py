@@ -10,7 +10,7 @@ with open("Day10\\test.txt","r") as data:
 
 
 print(data)
-x = 0
+i = 0
 chains = []
 
 '''
@@ -21,28 +21,32 @@ difference = 1   - just one chain
 then multiply the number of chains together
 '''
 
-for i in range(len(data)-1):
-    y=data[x]
-    if data[x+1] - data[x] == 1:
-        if data[x+2] - data[x] == 2:
-            if data[x+3] - data[x] == 3:
+while i < (len(data)-1):
+    y=data[i]
+    if data[i+1] - data[i] == 1:
+        if data[i+2] - data[i] == 2:
+            if data[i+3] - data[i] == 3:
                 chains.append(4)
-                x+=2
-            elif data[x+3] - data[x] != 3:
+                i+=2
+            elif data[i+3] - data[i] != 3:
                 chains.append(2) 
-                x+=1  
+                i+=1
+            #i+=1
         chains = chains
-    elif data[x+1] - data[x] == 2:
-        if data[x+2] - data[x] == 1:
-            chains.append(2)
-            x+=1
+    elif data[i+1] - data[i] == 2:
+        chains.append(2)
+        i+=1
         chains = chains
 
-    elif data[x+1] - data[x] == 3:
+    elif data[i+1] - data[i] == 3:
         chains = chains
-    x += 1
+    i += 1
         
 
 print(reduce(lambda x, y: x*y, chains))
 
     
+'''
+I think this is not working because I am skipping any of the elements within data[i+3] - data[i] == 3
+'''
+# 16777216 is too low
